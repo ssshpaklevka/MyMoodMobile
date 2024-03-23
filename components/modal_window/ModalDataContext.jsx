@@ -5,7 +5,7 @@ const ModalDataContext = createContext()
 
 export const ModalDataProvider = ({ children }) => {
   const [modalData, setModalData] = useState({
-    selectedEmoji: "",
+    selectedEmoji: {},
     selectedEmojis: [],
     selectedTextBlocks: [],
     customText: "",

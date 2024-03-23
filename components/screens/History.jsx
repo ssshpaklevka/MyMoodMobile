@@ -6,9 +6,9 @@ export default function History() {
   return (
     <LinearGradient
       style={{ flex: 1 }}
-      colors={["#FFCEB7", "#BACFFF", "#C7CFF2"]}
-      start={{ x: 0, y: 0.5 }}
-      end={{ x: 1, y: 1 }}
+      colors={["#EED3F2", "#FBDCBF"]}
+      start={{ x: 1, y: 1 }}
+      end={{ x: 0.5, y: 0 }}
     >
       <View style={styles.header}>
         <Text style={styles.headerText}>History</Text>

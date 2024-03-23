@@ -7,20 +7,6 @@ export default function Emoji({ goNext }) {
   const [selectedEmojis, setSelectedEmojis] = useState([])
   const { updateModalData } = useModalData() // Используется контекст
 
-  // Обработчик нажатия так, чтобы он добавлял эмодзи или удалял его, если тот уже выбран
-
-  // const toggleEmojiSelection = async emojiKey => {
-  //   const index = selectedEmojis.indexOf(emojiKey)
-  //   let newSelectedEmojis = [...selectedEmojis]
-
-  //   if (index > -1) {
-  //     // Удаляем эмодзи, если он уже был выбран
-  //     newSelectedEmojis.splice(index, 1)
-  //   } else {
-  //     // Добавляем эмодзи, если он еще не был выбран
-  //     newSelectedEmojis.push(emojiKey)
-  //   }
-
   const toggleEmojiSelection = emojiKey => {
     const newSelectedEmojis = selectedEmojis.includes(emojiKey)
       ? selectedEmojis.filter(e => e !== emojiKey) // Удаляем эмодзи, если он уже был выбран
@@ -61,7 +47,6 @@ export default function Emoji({ goNext }) {
 
   return (
     <View>
-      {/* Условие для отображения "Selected:" и списка выбранных элементов */}
       {selectedEmojis.length > 0 && (
         <View style={styles.selectedEmojiView}>
           <Text style={styles.selectedLabel}>Selected: </Text>
@@ -76,14 +61,13 @@ export default function Emoji({ goNext }) {
       <View style={styles.emojiSelect}>
         {emojis.map(emojis => (
           <TouchableOpacity
-            key={emojis.key} //ВОЗМОЖНО НАДО БУДЕТ УДАЛИТЬ
+            key={emojis.key}
             style={{ alignItems: "center", marginTop: 25 }}
             onPress={() => toggleEmojiSelection(emojis.key)}
           >
             <View style={styles.elipseEmoji}>
               <LinearGradient
                 style={styles.circleGradient}
-                // ДЛЯ КРУЖОЧКЕВ ЕСЛИ ЧТО МОЖНО ИСПОЛЬЗОВАТЬ ЕЩЕ ТАКОЙ ГРАДИЕНТ: #E5F3FF
                 colors={
                   selectedEmojis.includes(emojis.key)
                     ? ["#FFFFFF", "#FFFFFF"] //ЦВЕТ ВЫБРАННЫХ ЭМОДЖИ

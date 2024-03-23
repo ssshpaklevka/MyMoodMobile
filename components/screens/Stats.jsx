@@ -6,9 +6,9 @@ export default function Stats() {
   return (
     <LinearGradient
       style={{ flex: 1 }}
-      colors={["#FFCEB7", "#BACFFF", "#C7CFF2"]}
-      start={{ x: 0, y: 0.5 }}
-      end={{ x: 1, y: 1 }}
+      colors={["#0F2027", "#203A43", "#2C5364"]}
+      start={{ x: 1, y: 1 }}
+      end={{ x: 0.5, y: 0 }}
     >
       <View style={styles.header}>
         <Text style={styles.headerText}>Stats</Text>
@@ -26,5 +26,6 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 24,
     fontWeight: "900",
+    color: "white",
   },
 })

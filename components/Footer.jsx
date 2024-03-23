@@ -48,6 +48,9 @@ export default function Footer() {
           },
           tabBarActiveTintColor: "black",
           tabBarInactiveTintColor: "grey",
+          // tabBarStyle: {
+          //   backgroundColor: "black", // цвет таббара
+          // },
         })}
       >
         <Tab.Screen
@@ -65,7 +68,7 @@ export default function Footer() {
         />
         <Tab.Screen
           name='Add Mood'
-          component={View} // Технический компонент, не будет использоваться
+          component={View} // Технический компонент, не используется
           listeners={({ navigation }) => ({
             tabPress: event => {
               event.preventDefault() // Отмена стандартного поведения перехода

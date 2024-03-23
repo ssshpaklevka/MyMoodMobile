@@ -9,7 +9,7 @@ import {
 import { useModalData } from "./ModalDataContext"
 import { saveDataToFirestore } from "../FireBase/FirestoreService"
 
-export function FourScreen() {
+export function FourScreen({ onClose }) {
   const [note, setNote] = useState("")
   const { modalData, updateModalData } = useModalData()
 
@@ -22,6 +22,8 @@ export function FourScreen() {
 
     // Сохраняем все собранные данные в Firestore
     await saveDataToFirestore(fullData)
+
+    onClose()
 
     // Здесь может быть код для перехода к следующему шагу или закрытия модального окна
   }

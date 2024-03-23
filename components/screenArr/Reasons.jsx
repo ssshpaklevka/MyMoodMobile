@@ -32,21 +32,20 @@ export default function Reasons({ goNext }) {
     { key: 4, name: "Social" },
     { key: 5, name: "Work" },
     { key: 6, name: "Hobbies" },
-    { key: 7, name: "Family" },
-    { key: 8, name: "Breakup" },
-    { key: 9, name: "Weather" },
-    { key: 10, name: "Wife" },
-    { key: 11, name: "Party" },
-    { key: 12, name: "Love" },
-    { key: 13, name: "Food" },
-    { key: 14, name: "Distant" },
-    { key: 15, name: "Content" },
-    { key: 16, name: "Exams" },
+    { key: 9, name: "Breakup" },
+    { key: 10, name: "Weather" },
+    { key: 11, name: "Wife" },
+    { key: 12, name: "Party" },
+    { key: 13, name: "Love" },
+    { key: 14, name: "Food" },
+    { key: 15, name: "Distant" },
+    { key: 16, name: "Content" },
+    { key: 17, name: "Exams" },
+    { key: 18, name: "Friends" },
   ]
 
   return (
     <View>
-      {/* Условие для отображения "Selected:" и списка выбранных элементов */}
       {selectedReasons.length > 0 && (
         <View style={styles.selectedReasonsView}>
           <Text style={styles.selectedLabel}>Selected: </Text>
@@ -61,7 +60,7 @@ export default function Reasons({ goNext }) {
       <View style={styles.emojiSelect}>
         {reasons.map(reasons => (
           <TouchableOpacity
-            key={reasons.key} //ВОЗМОЖНО НАДО БУДЕТ УДАЛИТЬ
+            key={reasons.key}
             style={{ alignItems: "center", marginTop: 25 }}
             onPress={() => toggleReasonSelection(reasons.name)}
           >

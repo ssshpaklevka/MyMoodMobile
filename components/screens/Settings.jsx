@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useState } from "react"
-import { Text, View, StyleSheet } from "react-native"
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
 import { RadioButton } from "react-native-paper"
 import { LinearGradient } from "expo-linear-gradient"
@@ -35,18 +35,16 @@ export default function Settings() {
   return (
     <LinearGradient
       style={{ flex: 1 }}
-      colors={
-        dark ? ["#fff", "#fff", "#fff"] : ["#FFCEB7", "#BACFFF", "#C7CFF2"]
-      }
-      start={{ x: 0, y: 0.5 }}
-      end={{ x: 1, y: 1 }}
+      colors={["#EED3F2", "#FBDCBF"]}
+      start={{ x: 1, y: 1 }}
+      end={{ x: 0.5, y: 0 }}
     >
       <View style={styles.header}>
         <Text style={styles.headerText}>Settings</Text>
       </View>
 
       <View style={styles.settings}>
-        <View style={styles.theme}>
+        {/* <View style={styles.theme}>
           <Text style={{ marginLeft: 10, marginTop: 7, fontWeight: "800" }}>
             Theme
           </Text>
@@ -127,9 +125,9 @@ export default function Settings() {
               />
             </View>
           </View>
-        </View>
+        </View> */}
 
-        <View style={styles.language}>
+        {/* <View style={styles.language}>
           <Text style={{ fontWeight: "800" }}>Language</Text>
           <View style={styles.switchLanguage}>
             <View
@@ -176,10 +174,10 @@ export default function Settings() {
               />
             </View>
           </View>
-        </View>
-        <Text onPress={handleSignOut} style={styles.signOutButton}>
-          Выйти из аккаунта
-        </Text>
+        </View> */}
+        <TouchableOpacity style={styles.signOutButton} onPress={handleSignOut}>
+          <Text style={styles.signOutText}>Log out</Text>
+        </TouchableOpacity>
       </View>
     </LinearGradient>
   )
@@ -187,9 +185,17 @@ export default function Settings() {
 
 const styles = StyleSheet.create({
   signOutButton: {
-    marginTop: 20,
-    textAlign: "center",
-    color: "red",
+    marginTop: 50,
+    width: 355,
+    height: 45,
+    backgroundColor: "#8B4CFC",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 18,
+  },
+  signOutText: {
+    fontSize: 15,
+    fontWeight: "500",
   },
   header: {
     marginLeft: 18,

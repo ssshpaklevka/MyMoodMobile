@@ -78,11 +78,9 @@ const CustomModal = ({ visible, onClose }) => {
 
           <ThreeScreen goNext={goNext} />
 
-          <FourScreen goNext={goNext} />
+          <FourScreen goNext={goNext} onClose={onClose} />
         </Swiper>
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
-          {/* МОЖЕТ НЕ ПОНАДОБИТСЯ, ЕСЛИ У МЕНЯ ПОЛУЧИТСЯ СДЕЛАТЬ КНОПКУ НАВИГАЦИИ В КАЖДОМ КОМПОНЕНТЕ ОТДЕЛЬНО  */}
-        </View>
+        <View style={{ justifyContent: "center", alignItems: "center" }}></View>
       </LinearGradient>
     </Modal>
   )

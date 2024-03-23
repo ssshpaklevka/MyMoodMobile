@@ -13,10 +13,10 @@ export default function OneScreen({ goNext }) {
     goNext() // Переходим к следующей странице
   }
 
-  const [selectedEmoji, setSelectedEmoji] = useState("")
+  const [selectedEmoji, setSelectedEmoji] = useState({})
 
-  const handleEmojiSelection = emojiKey => {
-    setSelectedEmoji(emojiKey) // Сохраняем выбор пользователя в локальном состоянии
+  const handleEmojiSelection = emoji => {
+    setSelectedEmoji(emoji) // Сохраняем выбор пользователя в локальном состоянии
   }
 
   const emojis = [
@@ -73,12 +73,12 @@ export default function OneScreen({ goNext }) {
             {emojis.map(emojis => (
               <TouchableOpacity
                 key={emojis.key}
-                onPress={() => handleEmojiSelection(emojis.key)}
+                onPress={() => handleEmojiSelection(emojis)}
                 style={[
                   styles.emojiButton,
                   {
                     backgroundColor:
-                      selectedEmoji === emojis.key
+                      selectedEmoji.key === emojis.key
                         ? getBackgroundColor(emojis.key)
                         : "transparent",
                   },
@@ -100,8 +100,8 @@ export default function OneScreen({ goNext }) {
             paddingTop: 20,
           }}
         >
-          {selectedEmoji && (
-            <Text style={styles.selectedEmojiText}>{selectedEmoji}</Text>
+          {selectedEmoji.key && (
+            <Text style={styles.selectedEmojiText}>{selectedEmoji.key}</Text>
           )}
         </View>
       </View>
